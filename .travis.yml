@@ -1,18 +1,20 @@
 language: java
 
-services:
-  - docker
-
-before_install:
-  - docker run maven:3.3-jdk-8
-  - docker ps -a
-
-#jobs:
-#  include:
-#    - stage: test
-#      script: mvn clean test -Dtest=com.clarolab.selenium.SeleniumTest#passSeleTest
+#services:
+#  - docker
 #
-#addons:
-#  artifacts:
-#    paths:
-#    - ~/repo/target/surefire-reports/testng-results.xml
+#before_install:
+#  - docker run maven:3.3-jdk-8
+#  - docker ps -a
+
+jobs:
+  include:
+    - stage: test1
+      script: docker run maven:3.3-jdk-8 -c "mvn clean test -Dtest=com.clarolab.selenium.SeleniumTest#passSeleTest"
+    - stage: test2
+      script: docker run maven:3.3-jdk-8 -c 'mvn clean test -Dtest=com.clarolab.selenium.SeleniumTest#passSeleTest'
+
+addons:
+  artifacts:
+    paths:
+    - ~/repo/target/surefire-reports/testng-results.xml
