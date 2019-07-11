@@ -10,9 +10,7 @@ language: java
 jobs:
   include:
     - stage: test1
-      script: mvn clean test -Dtest=com.clarolab.selenium.SeleniumTest#passSeleTest
-    - stage: test2
-      script: docker run maven:3.3-jdk-8 -c 'mvn clean test -Dtest=com.clarolab.selenium.SeleniumTest#passSeleTest'
+      script: mvn clean test -Dtest=com.clarolab.selenium.SeleniumTest
 
 addons:
   artifacts:
