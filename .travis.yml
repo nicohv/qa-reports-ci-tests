@@ -7,12 +7,12 @@ before_install:
   - docker run maven:3.3-jdk-8
   - docker ps -a
 
-jobs:
-  include:
-    - stage: test
-      script: mvn clean test -Dtest=com.clarolab.selenium.SeleniumTest#passSeleTest
-
-addons:
-  artifacts:
-    paths:
-    - ~/repo/target/surefire-reports/testng-results.xml
+#jobs:
+#  include:
+#    - stage: test
+#      script: mvn clean test -Dtest=com.clarolab.selenium.SeleniumTest#passSeleTest
+#
+#addons:
+#  artifacts:
+#    paths:
+#    - ~/repo/target/surefire-reports/testng-results.xml
