@@ -1,12 +1,5 @@
 language: java
 
-#services:
-#  - docker
-#
-#before_install:
-#  - docker run maven:3.3-jdk-8
-#  - docker ps -a
-
 jobs:
   include:
     - stage: test1
